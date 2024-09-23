@@ -1,0 +1,40 @@
+<!-- login.component.html -->
+<form nz-form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzFor]="'username'" nzRequired>Username</nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="username" id="username" placeholder="Enter your username" />
+        <nz-form-explain *ngIf="loginForm.get('username')?.dirty && loginForm.get('username')?.invalid">
+          Please input your username!
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzFor]="'password'" nzRequired>Password</nz-form-label>
+      <nz-form-control>
+        <input nz-input type="password" formControlName="password" id="password" placeholder="Enter your password" />
+        <nz-form-explain *ngIf="loginForm.get('password')?.dirty && loginForm.get('password')?.invalid">
+          Please input your password!
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-label [nzFor]="'role'" nzRequired>Role</nz-form-label>
+      <nz-form-control>
+        <nz-select formControlName="role" id="role" placeholder="Select a role">
+          <nz-option *ngFor="let role of roles" [nzValue]="role" [nzLabel]="role"></nz-option>
+        </nz-select>
+        <nz-form-explain *ngIf="loginForm.get('role')?.dirty && loginForm.get('role')?.invalid">
+          Please select a role!
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="primary" [disabled]="!loginForm.valid">Login</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
