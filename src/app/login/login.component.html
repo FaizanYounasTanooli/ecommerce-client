@@ -3,7 +3,7 @@
       <nz-form-item>
         <nz-form-label [nzFor]="'username'">Username</nz-form-label>
         <nz-form-control>
-          <input nz-input nzRequired formControlName="username" id="'username'" placeholder="Enter your username" />
+          <input name="username" nz-input nzRequired formControlName="username" id="'username'" placeholder="Enter your username" />
           
         </nz-form-control>
       </nz-form-item>
@@ -11,14 +11,25 @@
       <nz-form-item>
         <nz-form-label [nzFor]="'password'">Password</nz-form-label>
         <nz-form-control>
-          <input nz-input formControlName="password" id="'password'" type="password" nzRequired placeholder="Enter your password" />
+          <input nz-input name="password" formControlName="password" id="'password'" type="password" nzRequired placeholder="Enter your password" />
         </nz-form-control>
       </nz-form-item>
   
       <nz-form-item>
+        <nz-form-label [nzFor]="'password'">Role </nz-form-label>
         <nz-form-control>
-          <button nz-button nzType="primary" [disabled]="!loginForm.valid">Log In</button>
+          <nz-select  name="password" formControlName="password" id="'password'"  nzRequired placeholder="Select Role" ></nz-select>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzType="primary" >Log In</button>
+        </nz-form-control>
+      </nz-form-item>
+
+      
+      
     </nz-form>
+
   </div>
+
